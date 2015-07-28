@@ -2,13 +2,13 @@
   ******************************************************************************
   * @file    stm32f30x_conf.h 
   * @author  MCD Application Team
-  * @version V1.2.1
-  * @date    31-October-2014
+  * @version V4.0.0
+  * @date    21-January-2013
   * @brief   Library configuration file.
   ******************************************************************************
   * @attention
   *
-  * <h2><center>&copy; COPYRIGHT 2014 STMicroelectronics</center></h2>
+  * <h2><center>&copy; COPYRIGHT 2013 STMicroelectronics</center></h2>
   *
   * Licensed under MCD-ST Liberty SW License Agreement V2, (the "License");
   * You may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@
 #ifndef __STM32F30X_CONF_H
 #define __STM32F30X_CONF_H
 
-      
 /* Includes ------------------------------------------------------------------*/
 /* Comment the line below to disable peripheral header file inclusion */
 #include "stm32f30x_adc.h"
@@ -41,9 +40,7 @@
 #include "stm32f30x_dma.h"
 #include "stm32f30x_exti.h"
 #include "stm32f30x_flash.h"
-#include "stm32f30x_fmc.h"
 #include "stm32f30x_gpio.h"
-#include "stm32f30x_hrtim.h"
 #include "stm32f30x_syscfg.h"
 #include "stm32f30x_i2c.h"
 #include "stm32f30x_iwdg.h"
