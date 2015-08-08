@@ -1,10 +1,12 @@
-INCLUDE_DIRS:= device/include cmsis/include ../include ../STM32F30x_StdPeriph_Driver/inc ../retarget/include
-SOURCE_DIRS:=  device/source ../source ../STM32F30x_StdPeriph_Driver/src ../retarget/source
+INCLUDE_DIRS:= device/include cmsis/include ../include ../STM32F30x_StdPeriph_Driver/inc ../retarget/include ../STM32_USB-FS-Device_Driver/inc
+SOURCE_DIRS:=  device/source ../source ../STM32F30x_StdPeriph_Driver/src ../retarget/source ../STM32_USB-FS-Device_Driver/src
 
 #All the dtandard peripherial library files
 SPL_FILES:= $(notdir $(wildcard ../STM32F30x_StdPeriph_Driver/src/*.c ))
+#All the usb library files
+USB_FILES:= $(notdir $(wildcard ../STM32_USB-FS-Device_Driver/src/*.c ))
 #the C files to compile
-CFILES:= system_stm32f30x.c $(SPL_FILES) main.c
+CFILES:= system_stm32f30x.c $(SPL_FILES) $(USB_FILES) main.c
 #the assembly files assemble
 ASM_FILES:= startup_stm32f302x8.S
 #the target microcontroller
