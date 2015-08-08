@@ -5,8 +5,10 @@ SOURCE_DIRS:=  device/source ../source ../STM32F30x_StdPeriph_Driver/src ../reta
 SPL_FILES:= $(notdir $(wildcard ../STM32F30x_StdPeriph_Driver/src/*.c ))
 #All the usb library files
 USB_FILES:= $(notdir $(wildcard ../STM32_USB-FS-Device_Driver/src/*.c ))
+#All the usb library files	
+SOURCE_FILES:= $(notdir $(wildcard ../source/*.c ))
 #the C files to compile
-CFILES:= system_stm32f30x.c $(SPL_FILES) $(USB_FILES) main.c
+CFILES:= system_stm32f30x.c $(SPL_FILES) $(USB_FILES) $(SOURCE_FILES)
 #the assembly files assemble
 ASM_FILES:= startup_stm32f302x8.S
 #the target microcontroller
@@ -24,7 +26,7 @@ LIB_NAMES:=
 LFLAGS:= $(patsubst %,-L%,$(LIB_DIRS)) $(patsubst %,-l%,$(LIB_NAMES)) -T$(LD_SCRIPTS) 
 #PREPROCESSOR OPTIONS
 #Define macro for all files
-DEFINES:= USE_STDPERIPH_DRIVER
+DEFINES:= USE_STDPERIPH_DRIVER USE_STM32303C_EVAL
 DEFINE_FLAGS:=$(patsubst %,-D%,$(DEFINES))
 INCLUDE_FLAGS:=$(patsubst %,-I%,$(INCLUDE_DIRS)) 
 CFLAGS= -mthumb -mcpu=cortex-m4 -mfloat-abi=hard -mfpu=fpv4-sp-d16 -std=c99 -Wall -g -ffunction-sections -fdata-sections 
